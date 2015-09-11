@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+<link rel=stylesheet href="html/css/c.css">
+<link rel="stylesheet" href="html/css/bootstrap.css">
+<link rel="stylesheet" href="html/css/theme.default.css">
+<link  rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/html/js/jquery-json/src/jquery.json.js"></script>
+<script src="/html/js/index.js"></script>
+<meta http-equiv="refresh" content="20">
+<title>Rio Dashboard</title>
+</head>
+<body>
+<div class="background1">
+	<div class="page">
+		<div style="background-image:url(html/img/rio-banner.png);height:120px"><span id="rmurl" class="rmspan" style>RM:{{.RMUrl}}</span></div>
+			<div class="table">
+				<table class="recordings"  id="recordingtbl">
+					<thead>
+						<tr>
+							<th><input type="checkbox" id="selectAll" /></th>
+							<th>RecordingId</th>
+							<th><span>ScheduledTime</span></th>
+							<th><span>SegmentCount</span></th>
+							<th><span>Status<span></th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					{{ range $record := .DataStatus }}
+					<tbody id="restbl">
+						<tr class="records">
+						<td><input type="checkbox" id="checkRow"/></td>
+        					<td class="link"><a href= "JavaScript:newPopup('html/rec_new_win.html');" onclick="setRowValue(this);" id="RecordingID" name="RecordingID">{{ $record.RecordingID}}</a></td>
+       					<td>{{ $record.ScheduledTime}}</td>
+        					<td>{{ $record.SegmentCount}}</td>
+          				<td>{{ $record.Status}}</td>
+       					<td><p data-placement="top" data-toggle="tooltip" title="Delete"><button id ="delicon" onclick="checkDel()" type = "submit" class="btn btn-primary btn-xs delete" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+     					<td><p data-placement="top" data-toggle="tooltip" title="Stop"><button id="stpcon" onclick="checkStop()" type = "submit" class="btn btn-primary btn-xs stop" data-title="Stop" data-toggle="modal" data-target="#stop" ><span class="glyphicon glyphicon-stop"></span></button></p></td>
+						</tr>
+     				{{ end }}
+					</tbody>
+				
+				</table>
+				<div class ="buttons" id="buttons">
+					<p id="errormsg"></p>
+					<a href="html/record.html"><button class="btn btn-primary btn-sm">ADD<span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></button></a>
+					<button class="btn btn-primary btn-sm stop" id="submit" onclick="onStop()">STOP<span class="glyphicon glyphicon-stop" aria-hidden="true"> </button>
+					<button class="btn btn-primary btn-sm delete" id="submit" onclick="onDelete()">DELETE<span class="glyphicon glyphicon-trash" aria-hidden="true"> </button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+
+sessionStorage.setItem("record",JSON.stringify({{.DataRecord}}));
+
+$(document).ready(function() {
+	var rmhtmlUrl = document.getElementById("rmurl").innerText;
+	sessionStorage.setItem("rmURL", rmhtmlUrl);
+	
+	
+    $("#recordingtbl tr").each(function(index,cell) {
+
+    var status = $(this).find("td").eq(4).text();
+	
+    		if (status == "DELETED"){
+			$(this).find('button[id="delicon"]').attr("disabled","disabled")
+			$(this).find('button[id="stpcon"]').attr("disabled","disabled")
+			$(this).find('input[id="checkRow"]').attr("disabled",true)
+
+    		}
+    });
+	funcSort();
+});
+
+</script>
+
+
+
+</body>
+
+</html>

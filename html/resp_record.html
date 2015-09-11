@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+<link rel=stylesheet href="html/css/c.css">
+<link rel="stylesheet" href="html/css/bootstrap.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/html/js/record.js"></script>
+<title>Rio Dashboard</title>
+</head>
+<body>
+<div class="background1">
+    <div class="page">
+        <div style="background-image:url(html/img/rio-banner.png);height:120px"><span id="rmurl" class="rmspan">RM:{{.RMUrl}}</span></div>
+			<div class="resp" id="resp" >
+			<p id="welcome">{{printf "%s" .Body}}</p>
+			<a ><button class="btn btn-primary btn-sm" onClick="history.go(-1);return true;" >BACK</button></a>
+			<a href="/"><button type="button" class="btn btn-primary btn-sm" id="submit" value="recordForm">HOME<span class="glyphicon glyphicon-home" aria-hidden="true"></button></a>
+			</div>
+    	</div>
+	</div>
+</div>
+</body>
+</html>

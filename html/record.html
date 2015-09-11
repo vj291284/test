@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+<link rel=stylesheet href="css/c.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/html/js/record.js"></script>
+<title>Rio Dashboard</title>
+</head>
+<body>
+<div class="background1">
+	<div class="page1">
+		<div style="background-image:url(img/rio-banner.png);height:120px"><span id="rmurl" class="rmspan"></span></div>
+		<div class="form1" >
+		<form class="recordform" action="/record" role="form" method="post" id="recordform" >
+		<fieldset>
+			<div class="form-group ">
+				<label for="status" class="col-sm-3 control-label">Action:</label>
+            	<input type="text" class="form-control" name="Action" id="Action" placeholder="Set Action" value="SET" size="80">
+			</div>
+			<div class="form-group ">
+            	<label for="AccountID" class="col-sm-3 control-label">AccountID:</label>
+            	<input type="text" class="form-control" name="AccountID" id="AccountID" placeholder="Enter AccountID" value="Test-Account">
+           	</div>
+			<div class="form-group ">
+            	<label for="StartTime" class="col-sm-3 control-label" id="labelStart">StartTime:</label>
+            	<input name= "StartTime" id= "StartTime" class="form-control" data-format="dd/MM/yyyy hh:mm:ss" type="text" value="">
+        	</div>
+			<div class="form-group ">
+           		<label for="EndTime" class="col-sm-3 control-label" id="labelEnd">EndTime:</label>
+           		<input name= "EndTime" id= "EndTime" class="form-control" data-format="dd/MM/yyyy hh:mm:ss" type="text" value="">
+            </div>
+			<div class="form-group ">
+           		<label for="StreamID" class="col-sm-3 control-label" name="labelStreamID" id="labelStreamID">StreamID:</label>
+           		<input type="text" class="form-control" name="StreamID" placeholder="Enter StreamID" id="StreamID" value="AMCHD_HD_CISCO_SHRI_16414_0_7114052776593016163">
+   			</div>
+			<div class="form-group ">
+          		<label for="AdZone" class="col-sm-3 control-label" name="labelAdZone" id="labelAdZone">AdZone:</label>
+            	<input type="text" class="form-control" name = "azone" placeholder="Enter AdZone"  value="Test-AdZone">
+           	</div>
+          	<div class="form-group ">
+          		<label for="StationID" class="col-sm-3 control-label" name="labelStationID" id="labelStationID">StationID:</label>
+              	<input type="text" class="form-control" name="StationID" placeholder="Enter StationID" id="StationID" value="Test-Station">
+           	</div>
+       		<div class="form-group">
+           		<label for="ListingID" class="col-sm-3 control-label" name="labelListingID" id="labelListingID">ListingID:</label>
+           		<input type="text" class="form-control" name="ListingID" placeholder="Enter ListingID" id="ListingID" value="Test-Listing">
+         	</div>
+			<div class="form-group">
+           		<label for="NoOfRec" class="col-sm-3 control-label" name="labelListingID" id="labelListingID">NoOfCopies:</label>
+           		<input type="text" class="form-control" name="NoOfRec" placeholder="Enter No of Recordings to be Scheduled" id="NoOfRec" value="1">
+         	</div>
+			<div class="form-group" id="record">
+				<div class="actionBtns">
+				
+          		<button type="submit" class="btn btn-primary btn-sm" id="submit" >RECORD <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></button>
+				<a><button type="button" class="btn btn-primary btn-sm" id="submit" value="recordForm" onClick="history.go(-1);return true;" >BACK</button></a>
+				</div>
+			</div>
+			</fieldset>
+			</form>
+		
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+window.onload=setFields();
+
+</script>
+</body>
+
+</html>

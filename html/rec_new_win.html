@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<link rel=stylesheet href="css/c.css">
+<link rel="stylesheet" href="./html/css/bootstrap.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<title>Rio Dashboard</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<!-- jQuery library -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="background1">
+	<div class="page">
+		<div style="background-image:url(img/rio-banner.png);width:1000px;height:120px"></div>
+			<table class="table table-bordered" id="rstTable">
+            	<thead>
+					<tr>
+						<th>RecordingID</th>	
+                    		<th>StartTime</th>
+						<th>EndTime</th>
+						<th>AccountID</th>
+						<th>StreamID</th>
+						<th>StationID</th>
+                 	</tr>
+				 </thead>
+				<tbody>
+               		<tr>
+                  		<td></td>
+                       	<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+                    </tr>
+						
+				</tbody>
+          	</table>
+		</div>	
+	</div>
+</div>
+<script>
+	var retrievedData = sessionStorage.getItem("record");
+	
+	var array = JSON.parse(retrievedData);
+	
+	var recID = sessionStorage.getItem("RecordingID"); 
+	
+	var table = document.getElementById("rstTable");
+	for (var i in array){
+		
+		if (recID == array[i].RecordingId){
+			
+		var row = table.insertRow(1);
+    	var cell1 = row.insertCell(0);
+    	var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
+		var cell6 = row.insertCell(5);
+			
+		cell1.innerHTML = array[i].RecordingId;
+		cell2.innerHTML = array[i].StartTime;
+		cell3.innerHTML = array[i].EndTime;
+		cell4.innerHTML = array[i].AccountID;
+		cell5.innerHTML = array[i].StreamID;
+		cell6.innerHTML = array[i].StationID;	
+		}
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* reset sheet */
+html { font-family : Verdana, sans-serif; font-size : 80%; margin : 0px; padding : 0px; background : #333; }
+body { margin : 0 auto; padding : 0px; background : white;text-align: center;overflow-x: hidden; }
+p { margin : 0; padding : 0 5 10 0; line-height : 1.5; }
+img { border : 0; }
+form { margin : 0; display : inline; }
+table { font-size : 100%; border-collapse : collapse; }
+tr { vertical-align : top; }
+th, td { padding : 0; text-align : left;}
+a { text-decoration : none; }
+a:hover { text-decoration : underline; }
+ul, ol { margin : 0 0 15 1.5em; }
+
+/* Centers the application */
+div.background1 { text-align : center; padding : 0 0}
+div.page { 
+  	text-align : left; margin : auto; width : 900; background : #D0D0D0; color : black; 
+  	border : solid black 1px;
+	border-width : 0px 3px 0px 0px ;
+
+}
+div.page1 { 
+  	text-align : left; margin : auto;height:700; width : 900; background : #D0D0D0; color : black; 
+  	border : solid black 1px;
+
+	border-width : 0px 3px 0px 0px ;
+}
+div.table {
+  padding : 10px 20px;
+  color : black;
+}
+table.recordings {
+  color : black;
+  width : 100%;
+padding : 0px 0px 0px 4px;
+}
+table.recordings th {
+  border : 1px solid #333;
+  padding : 0px 0px 0px 4px;
+  color:black
+}
+
+table.recordings td {
+  border : 1px solid #333;
+  padding : 0px 0px 0px 4px;
+  color:black
+}
+
+.rmspan{
+	padding:0px 800px;
+	position:absolute;
+	font-weight: bold;
+}
+#welcome{
+  font-size : 130%;
+  color:black;
+}
+
+div.form1{
+	height:200%;
+	top: 0;
+	padding:0px 20px 0px 10px;
+}
+
+div.form-group{
+	color : black;
+	left:0;
+	padding:0px 50px 0px 90px;
+}
+div.actionBtns{
+	padding : 15px 0px 0px 15px;
+	align:center
+}
+
+#buttons{
+	padding : 2px 0px 0px 0px;
+	
+}
+
+
+
+
+/* @end */
+
+/* @group tablesorter */
+
+.header {
+  cursor: pointer;
+}
+
+.headerSortDown:after {
+  content: " ▾";
+  font-family: Arial, sans-serif;
+}
+
+.headerSortUp:after {
+  content: " ▴";
+  font-family: Arial, sans-serif;
+}
+
+/* @end */
+
